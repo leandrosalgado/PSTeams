@@ -4,11 +4,18 @@ Import-Module PSExcel
 
 Connect-MicrosoftTeams
 
-$table = new-object System.Collections.ArrayList
+$table = New-Object System.Collections.ArrayList
 
 $userInfo = @()
 
-$xlsxPath = "$PSScriptroot\List of BU Pigment Users_071220.xlsx"
+$scriptPath = $PSScriptRoot
+
+if ($psISE)
+{
+    $scriptPath = Split-Path -Path $psISE.CurrentFile.FullPath        
+}
+
+$xlsxPath = "$scriptPath\List of BU Pigment Users_071220.xlsx"
 
 foreach($row in (Import-XLSX -Path $xlsxPath -RowStart 1)) {
     $table.Add($row) | Out-Null
