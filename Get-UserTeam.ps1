@@ -1,4 +1,6 @@
-﻿Import-Module MicrosoftTeams
+﻿Install-Module -Name PSExcel
+Import-Module MicrosoftTeams
+Import-Module PSExcel
 
 Connect-MicrosoftTeams
 
