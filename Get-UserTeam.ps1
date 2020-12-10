@@ -34,5 +34,5 @@ foreach($user in ($table.mail | Select -Unique)) {
 
 Disconnect-MicrosoftTeams
 
-$userInfo | Sort-Object UserEmail | Export-Csv -Path .\User-Teams.csv -Delimiter ";"
+$userInfo | Sort-Object UserEmail | Export-Csv -Path "$scriptPath\User-Teams.csv" -Delimiter ";"
 
